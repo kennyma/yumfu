@@ -1,0 +1,35 @@
+%article.recipe-container
+  %detail{:class => "recipe grid_7 alpha omega"}
+    %h1     
+      = @recipe.title
+    .clear     
+    %section.short-description        
+      = markdown @recipe.short_description
+    .clear
+    %section.ingredient
+      %h3 
+        Ingredients
+      = markdown @recipe.ingredients
+    .clear   
+    %section.instructions
+      %h3 
+        How to make #{@recipe.title}
+      = markdown @recipe.instructions
+    .clear
+  %aside{:class => "recipe-meta grid_5 alpha"}     
+    %section{:class => "author"}              
+      %img{:src => "/images/user-icon-place-holder.png", :class => "grid_1 alpha"}            
+      %h2{:class => "grid_4"}          
+        =@recipe.user.name          
+      %p{:class => "grid_4"}
+        1 win, 12 badges
+        .clear
+      .clear
+    .clear
+    %section{:class => "ranking"}
+      %p
+        Praesent blandit sodales sem, sed viverra libero porta id. Morbi dapibus dolor in tortor tempus a porta velit auctor. Cras pulvinar orci quis elit sagittis vestibulum.
+    .clear
+  .clear
+.clear
+

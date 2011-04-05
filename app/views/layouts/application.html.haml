@@ -1,0 +1,31 @@
+!!! 5
+%html{:lang=>"en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1"}    
+    %title
+      = (@page_title or 'Online Recipe Battle') + ' - Yumfu'
+    %meta{:name => "description", :content => (@page_description or "Online recipe battle. Challenge each other for the best recipe and let other members decide.")}
+    %meta{:name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0;"}
+    %link{:rel => "shortcut icon", :content => "/favicon.ico"}
+    %link{:rel => "apple-touch-icon", :content => "/apple-touch-icon.png"}
+    
+    = stylesheet_link_tag 'screen', :media => 'screen, projection'
+    = stylesheet_link_tag 'print', :media => 'print'
+    = csrf_meta_tag    
+  %body    
+    %header
+      .container_12  
+        .grid_7
+          %h1
+            Yumfu - Online Recipe Battle 
+        .grid_5
+          %ul.account_nav
+            = render :partial => 'shared/login_links'
+            = render :partial => 'shared/registration_links'
+    .clear             
+    #main.container_12
+      = yield
+    .clear
+    %footer.container_12        
+    .clear

@@ -1,0 +1,21 @@
+= form_for @recipe do |f|   
+  = f.label :title
+  = input_error @recipe, :title 
+  = f.text_field :title 
+  %br
+  = f.label :short_description, :required => true 
+  = input_error @recipe, :short_description
+  = f.text_area :short_description, :cols => 50, :rows => 3, :required => true
+  %br
+  = f.label :ingredients
+  = input_error @recipe, :ingredients
+  = f.text_area :ingredients, :cols => 50, :rows => 8, :required => true 
+  %br
+  = f.label :instructions
+  = input_error @recipe, :instructions
+  = f.text_area :instructions, :cols => 50, :rows => 8, :required => true
+  %br
+  = f.label :tags 
+  = f.text_field :tags
+  %br
+  = f.submit

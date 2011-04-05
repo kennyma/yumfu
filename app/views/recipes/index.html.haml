@@ -1,0 +1,12 @@
+%ul#recipe_list.container_12  
+  -@recipes.each do |recipe|
+    %li.grid_4
+      .recipe
+        %h2.title
+          = link_to truncate(recipe.title, :length => 50, :separator => ' '), recipe
+        .description
+          = markdown truncate(recipe.short_description, :length => 100, :separator => ' ')
+      .author                
+        %span.date #{time_ago_in_words recipe.created_at} ago by
+        %span.name #{recipe.user.name} 
+    
